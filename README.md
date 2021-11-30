@@ -1,6 +1,6 @@
 # auth0-jwt-sample
 
-See: https://zuplo.notion.site/Open-ID-JWT-Authentication-Policy-2030d5dac44f4895827d4cabbf05fe5b
+See:[Setting up JWT auth with Auth0](https://zuplo.notion.site/Setting-up-JWT-auth-with-Auth0-9f5ce6ad37f5418aaa781391c1995e00)
 
 To clone this repo to your Zuplo account, just zup it!
 
