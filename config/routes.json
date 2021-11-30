@@ -1,0 +1,47 @@
+{
+  "routes": [
+    {
+      "label": "What zup?",
+      "path": "hello-world",
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/hello-world)"
+      },
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "corsPolicy": "AnythingGoes",
+      "version": "v1",
+      "policies": {
+        "inbound": ["auth-policy"]
+      }
+    }
+  ],
+  "versions": [
+    {
+      "name": "none",
+      "pathPrefix": ""
+    },
+    {
+      "name": "v1",
+      "pathPrefix": "v1/"
+    }
+  ],
+  "policies": [
+    {
+      "name": "auth-policy",
+      "policyType": "open-id-jwt-inbound",
+      "handler": {
+        "export": "OpenIdJwtInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "issuer": "$env(AUTH_ISSUER)",
+          "audience": "$env(AUTH_AUDIENCE)",
+          "jwkUrl": "$env(AUTH_JWKS)",
+          "allowUnauthenticatedRequests": false
+        }
+      }
+    }
+  ]
+}

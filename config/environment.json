@@ -1,0 +1,13 @@
+{
+  "environmentVariables": {
+    "AUTH_ISSUER": {
+      "variableType": "Config"
+    },
+    "AUTH_AUDIENCE": {
+      "variableType": "Config"
+    },
+    "AUTH_JWKS": {
+      "variableType": "Config"
+    }
+  }
+}
